@@ -1,4 +1,4 @@
-# wegg-case
+# weg-case
 
 The instructions to run the frontend and the backend can be found in their respective folders.
 
