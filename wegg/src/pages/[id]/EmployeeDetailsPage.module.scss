@@ -1,0 +1,52 @@
+@use 'src/styles/variables' as var;
+@use 'src/styles/mixins' as mixin;
+
+.top {
+  display: flex;
+  align-items: center;
+  gap: var.$space-4;
+  margin-bottom: var.$space-8;
+  padding: var.$space-2 var.$space-4;
+
+  .avatar {
+    height: 160px;
+    width: 160px;
+    border-radius: var.$border-radius;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+  .name {
+    margin-bottom: var.$space-2;
+    font-size: var.$font-size-xl;
+  }
+  .contact {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: var.$font-size-sm;
+    color: var.$color-gray-500;
+    gap: var.$space-1;
+  }
+}
+
+.job {
+  margin-bottom: var.$space-2;
+  .title {
+    font-size: var.$font-size-lg;
+  }
+  .company {
+    font-weight: bold;
+  }
+}
+
+.bio {
+  padding: 0;
+  margin: auto;
+
+  @include mixin.media-sm {
+    padding: 0 var.$space-8;
+  }
+}
+
+.subordinates {
+  margin: var.$space-8 0 var.$space-2;
+}

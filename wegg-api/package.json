@@ -1,0 +1,15 @@
+{
+  "name": "wegg-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "graphql-faker --open"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "graphql-faker": "2.0.0-rc.25"
+  }
+}

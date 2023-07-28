@@ -1,0 +1,9 @@
+@use 'src/styles/variables' as var;
+@use 'src/styles/mixins' as mixin;
+
+.header {
+  padding: var.$space-4 0;
+  position: sticky;
+  top: 0;
+  background-color: rgba(var.$color-gray-100, 0.8);
+}
