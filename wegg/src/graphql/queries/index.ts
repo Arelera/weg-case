@@ -11,8 +11,9 @@ export const GET_COMPANIES = gql`
         lastName
         avatar
         job
-        address
-        bio
+        company {
+          name
+        }
       }
     }
   }
@@ -36,6 +37,9 @@ export const GET_EMPLOYEE_DETAILS = gql`
         lastName
         avatar
         job
+        company {
+          name
+        }
       }
       company {
         name

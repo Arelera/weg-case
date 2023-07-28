@@ -1,7 +1,7 @@
-import { useAppSelector } from '@/store'
 import { Employee } from '@/store/types'
 import EmployeeItem from '../EmployeeItem'
 import styles from './EmployeeList.module.scss'
+import { useAppSelector } from '@/store/hooks'
 
 type Props = {
   employees: Employee[]

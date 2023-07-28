@@ -12,23 +12,13 @@ import { useState } from 'react'
 type Props = {
   companies: Company[]
   error: string | null
-  loading: boolean
 }
 
-export default function Home({ companies, loading, error }: Props) {
-  const [isGroupedByCompany, setIsGroupedByCompany] = useState(false)
-
+export default function Home({ companies, error }: Props) {
   return (
     <MainLayout>
-      {/* <button onClick={() => setIsGroupedByCompany((val) => !val)}>
-        Group
-      </button> */}
-      {loading ? (
-        <div>Loading...</div>
-      ) : error ? (
-        <div>Had an error.</div>
-      ) : companies && isGroupedByCompany ? (
-        <CompanyList companies={companies} />
+      {error ? (
+        <div>{error}</div>
       ) : (
         <EmployeeList
           employees={companies.flatMap((company) => company.employees)}
@@ -39,15 +29,13 @@ export default function Home({ companies, loading, error }: Props) {
 }
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  const { data, loading, error } =
-    await apolloClient.query<GetCompaniesResults>({
-      query: GET_COMPANIES,
-    })
+  const { data, error } = await apolloClient.query<GetCompaniesResults>({
+    query: GET_COMPANIES,
+  })
 
   return {
     props: {
       companies: data.allCompanies,
-      loading,
       error: error?.message || null,
     },
   }

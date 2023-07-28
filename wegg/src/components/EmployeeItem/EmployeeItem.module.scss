@@ -38,6 +38,11 @@
 
     .job {
       font-size: var.$font-size-md;
+
+      .company {
+        font-size: var.$font-size-sm;
+        color: var.$color-gray-500;
+      }
     }
   }
 }

@@ -1,15 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit'
-import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux'
+import loggerMiddleware from './middleware/logger'
 import employeesReducer from './slices/employees'
+import logsReducer from './slices/logs'
 
 export const store = configureStore({
   reducer: {
     employees: employeesReducer,
+    logs: logsReducer,
   },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(loggerMiddleware),
 })
-
-export type RootState = ReturnType<typeof store.getState>
-export type AppDispatch = typeof store.dispatch
-
-export const useAppDispatch: () => AppDispatch = useDispatch
-export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector

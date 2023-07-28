@@ -1,0 +1,14 @@
+@use 'src/styles/variables' as var;
+
+.logs {
+  .timestamp {
+    margin-bottom: var.$space-2;
+
+    font-size: var.$font-size-sm;
+    color: var.$color-gray-500;
+  }
+
+  .item {
+    margin-bottom: var.$space-8;
+  }
+}

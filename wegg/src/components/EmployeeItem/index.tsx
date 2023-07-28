@@ -1,5 +1,5 @@
 import avatarPlaceholder from '@/assets/images/avatar-placeholder.png'
-import { useAppDispatch, useAppSelector } from '@/store'
+import { useAppDispatch, useAppSelector } from '@/store/hooks'
 import { downvoteEmployee, upvoteEmployee } from '@/store/slices/employees'
 import { Employee } from '@/store/types'
 import Link from 'next/link'
@@ -28,7 +28,10 @@ export default function EmployeeItem({ employee }: Props) {
           <h3 className={styles.name}>
             {employee.firstName} {employee.lastName}
           </h3>
-          <div className={styles.job}>{employee.job}</div>
+          <div className={styles.job}>
+            {employee.job}{' '}
+            <span className={styles.company}>at {employee.company.name}</span>
+          </div>
         </div>
       </Link>
       <div className={styles.votes}>

@@ -7,6 +7,9 @@ export default function Header() {
       <h1>
         <Link href="/">Wegg</Link>
       </h1>
+      <Link href="/logs" className={styles.logs}>
+        View Logs
+      </Link>
     </header>
   )
 }
